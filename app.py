@@ -5,7 +5,7 @@ from flask import render_template, url_for, redirect
 from datetime import date
 
 ########################################################### Showing all workouts 
-@app.route("/home", methods = ["GET", "POST"])
+@app.route("/", methods = ["GET", "POST"])
 def home():
 	form = SelectWorkout()
 	list_of_workouts = []
