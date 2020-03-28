@@ -1,0 +1,38 @@
+
+{%extends "layout.html"%}
+{%block content%}
+
+<div class="jumbotron">
+    <h5 align="center">Your Tracker</h5><br>
+
+    <div class="dropdown">
+      <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Menu
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="{{url_for('home')}}"><button type="button" class="btn btn-secondary">Home</button></a> 
+            <a class="dropdown-item" href="{{url_for('add_workout')}}"><button type="button" class="btn btn-secondary">Add new workout</button></a> 
+            <a class="dropdown-item" href="{{url_for('workout_by_date')}}"><button type="button" class="btn btn-secondary">Search workout by date</button></a>
+            <a class="dropdown-item" href="{{url_for('workout_by_name')}}"><button type="button" class="btn btn-secondary">Search workout by name</button></a>
+        
+      </div>
+      </div>
+      <br><br><br><br><br><br><br>
+
+
+    <div style = "height:520px;width:520  px;font:16px/26px Georgia, Garamond, Serif;overflow:auto;">
+        <form method="POST">
+            {{form.hidden_tag()}}
+            {{form.workout_date.label}}{{form.workout_date(size="8")}}
+            {{form.workout_name.label}}{{form.workout_name()}}
+            {{form.weight.label}}{{form.weight(size="5")}}
+            {{form.rep.label}}{{form.rep(size="5")}} <br><br>
+            {{form.delete()}}  
+            {{form.update()}}
+            {{form.add()}}
+        
+        </form>
+    </div>
+    </div>
+  </div>
+{%endblock content%}

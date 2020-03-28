@@ -1,0 +1,34 @@
+{%extends "layout.html"%}
+{%block content%}
+
+<div class="jumbotron">
+	<h5 align="center">Your Tracker</h5><br>
+	
+	
+	<div class="dropdown">
+		<button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		  Menu
+		</button>
+		<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+			<a class="dropdown-item" href="{{url_for('home')}}"><button type="button" class="btn btn-secondary">Home</button></a> 
+			<a class="dropdown-item" href="#"><button type="button" class="btn btn-secondary">Search workout by date</button></a>
+			<a class="dropdown-item" href="{{url_for('workout_by_name')}}"><button type="button" class="btn btn-secondary">Search workout by name</button></a>
+			
+		  </div>
+		  
+		</div>
+		
+		<br><br><br><br><br><br><br>
+
+	
+	<form method="post">
+		{{form.hidden_tag()}}
+		{{form.workout_name.label}}{{form.workout_name()}}
+		{{form.weight.label}}{{form.weight(placeholder="Kg")}}
+		{{form.rep.label}}{{form.rep()}}
+		{{form.submit()}}
+	</form>
+	
+	<br><br>
+</div>
+{%endblock content%}

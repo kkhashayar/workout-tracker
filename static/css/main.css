@@ -1,0 +1,11 @@
+.jumbotron{
+    background-image: url("../img/db4.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+h5{
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    color: rgb(247, 69, 15);
+}
+
