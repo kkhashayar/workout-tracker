@@ -10,7 +10,7 @@ def home():
 	form = SelectWorkout()
 	list_of_workouts = []
 	all_workouts = show_all_workouts()
-	
+	print(type(all_workouts))
 	all_workouts.reverse()
 
 	for workout in all_workouts:
